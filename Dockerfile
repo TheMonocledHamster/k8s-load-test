@@ -8,8 +8,8 @@ COPY ./bin /app/bin
 COPY wsgi.py /app/wsgi.py
 WORKDIR /app
 
-RUN useradd nobody
-USER nobody
+RUN useradd user && usermod -aG sudo user
+USER user
 
 EXPOSE 8080
 
